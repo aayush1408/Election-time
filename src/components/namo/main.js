@@ -1,13 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 import ComponentView from './view';
+import Button from '../button/index';
 
 export default class Main extends React.Component {
     constructor() {
         super();
         this.state = {
-            tweets: []
+            tweets: [],
+            ncounter: 0
         };
+        this.increment = this.increment.bind(this);
+    }
+    increment(e) {
+        this.setState({ ncounter: this.state.ncounter + 1 });
     }
     componentDidMount() {
         axios('/namo').then((res) => {
@@ -31,8 +37,9 @@ export default class Main extends React.Component {
                 <ul>
                     {this.getTweets()}
                 </ul>
+                <Button increment={this.increment} /> {this.state.ncounter}
             </div>
         );
     }
 }
-Main.displayName = "Namo-Component";
+Main.displayName = "Namo-Component";                                                                       

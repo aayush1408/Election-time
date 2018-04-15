@@ -3,7 +3,7 @@ import './style.css';
 
 var view = function () {
     return (
-        <button>Upvote</button>
+        <button onClick={this.high}>Upvote</button>
     )
 }
 export default view;
