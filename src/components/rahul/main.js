@@ -7,12 +7,12 @@ export default class Main extends React.Component {
         super();
         this.state = {
             tweets: [],
-            rcounter: 0
+            counter: 0
         };
         this.increment = this.increment.bind(this);
     }
     increment(e) {
-        this.setState({ rcounter: this.state.rcounter + 1 });
+        this.setState({ counter: this.state.counter + 1 });
     }
     componentDidMount() {
         axios('/rahul').then((res) => {
@@ -36,7 +36,7 @@ export default class Main extends React.Component {
                 <ul>
                     {this.getTweets()}
                 </ul>
-                <Button increment={this.increment} /> {this.state.rcounter}
+                <Button increment={this.increment} /> {this.state.counter}
             </div>
         );
     }

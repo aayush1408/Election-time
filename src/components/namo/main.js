@@ -8,12 +8,12 @@ export default class Main extends React.Component {
         super();
         this.state = {
             tweets: [],
-            ncounter: 0
+            counter: 0
         };
         this.increment = this.increment.bind(this);
     }
     increment(e) {
-        this.setState({ ncounter: this.state.ncounter + 1 });
+        this.setState({ counter: this.state.counter + 1 });
     }
     componentDidMount() {
         axios('/namo').then((res) => {
@@ -37,7 +37,7 @@ export default class Main extends React.Component {
                 <ul>
                     {this.getTweets()}
                 </ul>
-                <Button increment={this.increment} /> {this.state.ncounter}
+                <Button increment={this.increment} /> {this.state.counter}
             </div>
         );
     }
