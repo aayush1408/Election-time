@@ -1,6 +1,7 @@
-Elections are just about to begin, check what's your favourite candidate is tweeting
+# Elections are just about to begin, check what's your favourite candidate is tweeting
 
-//To run
+## To run <br>
+
 npm i <br/>
 cd server/ <br/>
 npm i <br/>
