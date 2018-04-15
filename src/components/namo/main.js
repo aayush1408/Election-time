@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import ComponentView from './view';
 import Button from '../button/index';
+import "materialize-css";
+import 'materialize-css/dist/css/materialize.min.css';
 
 export default class Main extends React.Component {
     constructor() {
@@ -27,14 +29,14 @@ export default class Main extends React.Component {
     }
     getTweets() {
         return this.state.tweets.map((tweet, i) => {
-            return (<li key={i}>{tweet}</li>);
+            return (<li key={i} className="collection-item">{tweet}</li>);
         });
     }
     render() {
         return (
             <div>
                 {(ComponentView.bind(this))()}
-                <ul>
+                <ul className="collection">
                     {this.getTweets()}
                 </ul>
                 <Button increment={this.increment} /> {this.state.counter}

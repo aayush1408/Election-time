@@ -1,9 +1,10 @@
 import React from 'react';
 import './style.css';
-
-const view = function(){
+import "materialize-css";
+import 'materialize-css/dist/css/materialize.min.css';
+const view = function () {
     return (
-        <h2>Narendra</h2>
+        <h2>Narendra Modi</h2>
     );
 };
 
