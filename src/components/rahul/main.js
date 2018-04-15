@@ -1,13 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import ComponentView from './view';
-
+import Button from '../button/index';
 export default class Main extends React.Component {
     constructor() {
         super();
         this.state = {
-            tweets: []
+            tweets: [],
+            rcounter: 0
         };
+        this.increment = this.increment.bind(this);
+    }
+    increment(e) {
+        this.setState({ rcounter: this.state.rcounter + 1 });
     }
     componentDidMount() {
         axios('/rahul').then((res) => {
@@ -31,6 +36,7 @@ export default class Main extends React.Component {
                 <ul>
                     {this.getTweets()}
                 </ul>
+                <Button increment={this.increment} /> {this.state.rcounter}
             </div>
         );
     }
