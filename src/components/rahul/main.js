@@ -10,13 +10,14 @@ export default class Main extends React.Component {
         super();
         this.state = {
             tweets: [],
-            counter: 0
+            counter: parseInt(localStorage.getItem("rahul")) || 0
         };
         this.increment = this.increment.bind(this);
     }
     increment(e) {
         if (this.state.counter < 10) {
             this.setState({ counter: this.state.counter + 1 });
+            localStorage.setItem("rahul", this.state.counter + 1);
         }
         else {
             alert('That\'s the limit');
