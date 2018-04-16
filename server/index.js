@@ -1,8 +1,10 @@
 const express = require('express');
 const request = require('request');
 const config = require('./config/config');
-
+const cors = require('cors');
 const app = express();
+
+app.use(cors({ origin: 'http://pmtweets12.surge.sh' }));
 
 app.get('/namo', (req, res) => {
     request({

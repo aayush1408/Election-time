@@ -15,10 +15,15 @@ export default class Main extends React.Component {
         this.increment = this.increment.bind(this);
     }
     increment(e) {
-        this.setState({ counter: this.state.counter + 1 });
+        if (this.state.counter < 10) {
+            this.setState({ counter: this.state.counter + 1 });
+        }
+        else {
+            alert('That\'s the limit');
+        }
     }
     componentDidMount() {
-        axios('/rahul').then((res) => {
+        axios('https://server-dunoskazaf.now.sh/namo').then((res) => {
             res.data.map((tweet) => {
                 return this.setState({ tweets: [...this.state.tweets, tweet.text] });
             })
