@@ -24,7 +24,7 @@ export default class Main extends React.Component {
         }
     }
     componentDidMount() {
-        axios('https://server-dunoskazaf.now.sh/namo').then((res) => {
+        axios('/rahul').then((res) => {
             res.data.map((tweet) => {
                 return this.setState({ tweets: [...this.state.tweets, tweet.text] });
             })
