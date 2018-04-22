@@ -2,12 +2,12 @@
   "name": "politic-tweets",
   "version": "0.1.0",
   "private": true,
-  "proxy":{
-    "/namo":{
-      "target":"http://localhost:5000"
+  "proxy": {
+    "/namo": {
+      "target": "http://localhost:5000"
     },
-    "/rahul":{
-      "target":"http://localhost:5000"
+    "/rahul": {
+      "target": "http://localhost:5000"
     }
   },
   "dependencies": {
@@ -15,12 +15,16 @@
     "materialize-css": "^1.0.0-beta",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "test":"jest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
   }
 }
